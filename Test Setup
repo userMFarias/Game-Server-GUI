@@ -1,0 +1,46 @@
+This project implements a simple number comparison game using TCP sockets and a graphical interface built with Tkinter.
+
+🖥 Server (server_gui.py)
+The server waits for two clients to connect.
+
+Once connected, it receives a number (0–9) from each client.
+
+The server then applies the game logic:
+
+If the numbers are equal, it's a draw (2).
+
+If the numbers differ by 3 or less, the higher number wins.
+
+If they differ by 4 or more, the lower number wins.
+
+The server sends the result (0, 1, or 2) back to each client.
+
+The GUI includes a start button and a scroll window that logs server messages like connections and game results.
+
+🧑‍💻 Client (client_gui.py)
+The user enters a number between 0 and 9 and clicks "Send".
+
+The client connects to the server via TCP and sends the number.
+
+It then waits for a response:
+
+1 → "You win!"
+
+0 → "You lose!"
+
+2 → "Draw!"
+
+The result is displayed in a label below the button.
+
+Two clients must be run separately to simulate the game between players.
+
+🧪 Test Setup
+Open 3 terminal windows:
+
+Run server_gui.py to launch the server.
+
+Run two instances of client_gui.py.
+
+Each client sends a number to the server.
+
+The server logs connections and results.
